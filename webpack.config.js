@@ -13,21 +13,19 @@ module.exports = {
     publicPath: '/static/'
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
   ],
   module: {
     loaders: [
       {
         test: /\.js$/,
-        loaders: [ 'babel' ],
+        loader: 'babel-loader',
         exclude: /node_modules/,
-        include: __dirname
-      },
-      {
-        test: /\.css?$/,
-        loaders: [ 'style', 'raw' ],
-        include: __dirname
+        query: {
+          presets: ['react', 'es2015', 'react-hmre']
+        }
       }
     ]
   }
