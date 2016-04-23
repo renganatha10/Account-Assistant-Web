@@ -11,12 +11,16 @@ class Header extends Component {
 
     handleAddFile() {
         var childId = this.props.actions.addFile((this.state.text== '') ? "NewFile" : this.state.text ).nodeId;
+        this.setState({ text: '' })
         this.props.actions.addChild(this.props.item, childId);
+        
     }
 
     handleAddFolder() {
         var childId = this.props.actions.addFolder((this.state.text== '') ? "NewFolder" : this.state.text ).nodeId;
+        this.setState({ text: '' })
         this.props.actions.addChild(this.props.item, childId);
+        
     }
 
     handleDetleteFile() {
@@ -42,7 +46,7 @@ class Header extends Component {
                 <center><h2 className="panel-title">Folder Structure</h2></center>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Enter Name</label>
-                    <input onChange={this.handleChange.bind(this) } type="email" className="form-control" id="fileName" placeholder="Enter Name" />
+                    <input onChange={this.handleChange.bind(this) } value={this.state.text} type="email" className="form-control" id="fileName" placeholder="Enter Name" />
                 </div>
 
                 <center>
