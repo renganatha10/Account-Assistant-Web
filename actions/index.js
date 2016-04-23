@@ -21,8 +21,8 @@ export function deleteItem(nodeId) {
   return { type: types.DELETE_ITEM, nodeId }
 }
 
-export function editItem(text) {
-  return { type: types.EDIT_ITEM, text }
+export function editItem(text,nodeId) {
+  return { type: types.EDIT_ITEM, text , nodeId }
 }
 
 export function traverseItem(id, parentId) {

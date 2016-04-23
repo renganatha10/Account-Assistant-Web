@@ -34,6 +34,8 @@ function node(state, action) {
             return Object.assign({}, state, {
                 childIds: childIds(state.childIds, action)
             })
+        case EDIT_ITEM:
+            return Object.assign({},state, {name : action.text })
         default:
             state;
     }
