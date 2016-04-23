@@ -1,7 +1,17 @@
-import { createStore } from 'redux'
+import { applyMiddleware, createStore } from 'redux';
 import rootReducer from '../reducers'
+import createLogger from 'redux-logger';
 
-export default function configureStore(initialState) {
-  const store = createStore(rootReducer, initialState)
+const logger = createLogger();
+export default function configureStore(intitial) {
+  const store = createStore(rootReducer, intitial, applyMiddleware(logger))
+
+  if (module.hot) {
+    // Enable Webpack hot module replacement for reducers
+    module.hot.accept('../reducers', () => {
+      const nextReducer = require('../reducers').default
+      store.replaceReducer(nextReducer)
+    })
+  }
   return store
 }

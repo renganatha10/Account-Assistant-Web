@@ -1,21 +1,30 @@
-import * as types from '../constants/ActionTypes'
+import * as types from '../constants'
 
+let nextId = 0
 export function addFolder(text) {
-  return { type: types.ADD_FOLDER, text }
+  return { type: types.ADD_FOLDER, text, nodeId: `new_${nextId++}` }
 }
 
-export function deleteItem(id) {
-  return { type: types.DELETE_ITEM, id }
+export function addFile(text) {
+  return { type: types.ADD_FILE, text, nodeId: `new_${nextId++}` }
 }
 
-export function editItem(id, text) {
-  return { type: types.EDIT_ITEM, id, text }
+export function addChild(id, childid) {
+  return { type: types.ADD_CHILD, nodeId: id.currentID, childid }
 }
 
-export function traverseItem(items) {
-  return { type: types.TRAVERSE_ITEM, id }
+export function removeChild(id, childid) {
+  return { type: types.REMOVE_CHILD, nodeId: childid, id }
 }
 
-export function toggleTextBox() {
-  return { type: types.SHOW_TEXT_BOX }
+export function deleteItem(nodeId) {
+  return { type: types.DELETE_ITEM, nodeId }
+}
+
+export function editItem(text) {
+  return { type: types.EDIT_ITEM, text }
+}
+
+export function traverseItem(id, parentId) {
+  return { type: types.TRAVERSE_ITEM, id, parentId }
 }

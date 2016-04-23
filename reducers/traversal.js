@@ -1,10 +1,11 @@
-import { TRAVERSE_ITEM } from '../constants/ActionTypes'
+import { TRAVERSE_ITEM } from '../constants'
 
-const traversal = (state,action) => {
+
+const traversal = (state = 0 ,action) => {
     switch (action.type) {
         case TRAVERSE_ITEM:
-            return state;
-        default:
+            return {currentID : action.id ,parentId : action.parentId} ;
+        default :
             return state;
     }
 } 

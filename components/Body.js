@@ -1,21 +1,25 @@
 
 import React, { Component } from 'react'
+import classnames from 'classnames'
+import BodyContainer from '../containers/BodyContainer'
 
-import Item from './Item' 
 
-class Body extends Component{
-     
-    render(){
-        return(
-           <div className="panel-body">
-                    <ul>
-                        {
-                            this.props.items.map(item =>
-                               <Item  id = {item.id} name={item.name}  items= {item.children} />
-                             )
-                        }
-                    </ul>        
-            </div>)
+class Body extends Component {
+
+    handleTraversal() {
+        this.props.finalTraversal(this.props.id, this.props.parentId);
+    }
+
+    render() {
+        return (
+            <ul>
+                <li key = { this.props.id  }  >
+                    <span  className={classnames({ selected: this.props.items.id === this.props.traverse.currentID }) }
+                        onClick = {this.handleTraversal.bind(this) }  >{this.props.items.name}</span>
+                    { this.props.items.childIds.map(item => <BodyContainer id={item}  parentId = {this.props.id}  />) }
+                </li>
+            </ul>
+        )
     }
 }
 
