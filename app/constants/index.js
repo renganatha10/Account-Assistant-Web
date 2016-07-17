@@ -1,0 +1,8 @@
+export const ADD_FOLDER = 'ADD_FOLDER'
+export const ADD_FILE = 'ADD_FILE'
+export const DELETE_ITEM = 'DELETE_ITEM'
+export const EDIT_ITEM = 'EDIT_ITEM'
+export const TRAVERSE_ITEM = 'TRAVERSE_ITEM'
+export const SHOW_TEXT_BOX = 'SHOW_TEXT_BOX'
+export const ADD_CHILD = 'ADD_CHILD'
+export const REMOVE_CHILD = 'REMOVE_CHILD'
