@@ -1,10 +1,10 @@
 import React from 'react'
 import { render } from 'react-dom'
-import App from './components/App'
+import App from './app/components/App'
 
-import rootReducer from './reducers'
+import rootReducer from './app/reducers'
 import { Provider } from 'react-redux'
-import configureStore from './store/configureStore'
+import configureStore from './app/store/configureStore'
 
 
 const initialState = {
