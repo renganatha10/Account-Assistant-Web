@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export default class Class extends Component {
+export default class PawnDetail extends Component {
 
   render() {
     return (

@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 export default class PawnRegister extends Component {
 
   render() {
+    var style = {position : 'absolute',bottom : 20, right : 20}
     return (
       <div className="container-fluid">
         <table className="table table-striped">
@@ -71,7 +72,7 @@ export default class PawnRegister extends Component {
             </tr>
           </tbody>
         </table>
-        <button type="button" style = "position : absolute;bottom : 20px; right : 20px"  className="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        <button type="button" style = {style}  className="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
           <span className="glyphicon glyphicon-search" aria-hidden="true"></span>
         </button>
 

@@ -5,7 +5,7 @@ var config = require('./webpack.config')
 var express = require('express');
 var path = require('path');
 var app = new (require('express'))()
-var port = 3000
+var port = 3010
 
 var compiler = webpack(config)
 app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }))
@@ -14,6 +14,7 @@ app.use(express.static(path.join(__dirname, './.tmp')))
 app.use(express.static(path.join(__dirname, './app')))
 
 app.get("/", function (req, res) {
+  console.log(__dirname);
   res.sendFile(__dirname + '/index.html')
 })
 

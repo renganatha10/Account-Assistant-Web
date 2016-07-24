@@ -1,32 +1,35 @@
 import React,{Component} from 'react';
+import { Link } from 'react-router'
 
 export default class IndexPage extends Component {
 
     render() {
         return (
-            <div class="header">
-        <h1 class="text-muted text-center">AVL அடகு கடை</h1>
-      </div>
+            <div>
+                <div className="header">
+                    <h1 className="text-muted text-center">AVL அடகு கடை</h1>
+                </div>
 
-      <div class="mainbox" >
-        <div class ="flex-container" >
-            <a class="btn btn-lg btn-success" href="#">E நமுனா</a>
-            <a class="btn btn-lg btn-success" href="#">F நமுனா</a>
-            <a class="btn btn-lg btn-success" href="#">வட்டி ரசிது</a>
-        </div>
-        <div class ="flex-container" >
-          <a class="btn btn-lg btn-success" href="#">அடகு Register</a>
-          <a class="btn btn-lg btn-success" href="#">மொத்த Register</a>
-        </div>
-        <div class ="flex-container" >
-          <a class="btn btn-lg btn-success balance-sheet" href="#">Balance Sheet</a>
-          <a class="btn btn-lg btn-success" href="#">Profit and Loss</a>
-        </div>
-        <div class ="flex-container" >
-          <a class="btn btn-lg btn-success depositor" href="#">Depositor விபரம்</a>
-          <a class="btn btn-lg btn-success" href="#">அடகு விபரம்</a>
-        </div>
-      </div>
+                  <div className="mainbox" >
+                    <div className ="flex-container" >
+                        <Link className="btn btn-lg btn-success"  to = "/enauma"> E நமுனா</Link>
+                        <Link className="btn btn-lg btn-success" to="/fnamuna">F நமுனா</Link>
+                        <Link className="btn btn-lg btn-success" to="/interestreceipt">வட்டி ரசிது</Link>
+                    </div>
+                    <div className ="flex-container" >
+                      <Link className="btn btn-lg btn-success" to="/pawnregister">அடகு Register</Link>
+                      <Link className="btn btn-lg btn-success" to="/wholeregister">மொத்த Register</Link>
+                    </div>
+                    <div className ="flex-container" >
+                      <Link className="btn btn-lg btn-success balance-sheet" to="/balancesheet">Balance Sheet</Link>
+                      <Link className="btn btn-lg btn-success" to="profitloss">Profit and Loss</Link>
+                    </div>
+                    <div className ="flex-container" >
+                      <Link className="btn btn-lg btn-success depositor" to="/depositordetail">Depositor விபரம்</Link>
+                      <Link className="btn btn-lg btn-success" to="/pawndetail">அடகு விபரம்</Link>
+                    </div>
+                  </div>
+            </div>
         );
     }
 }

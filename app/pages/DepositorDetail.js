@@ -4,9 +4,9 @@ export default class DepositorDetail extends Component {
 
     render() {
         return (
-            <div class="container-fluid">
+            <div className="container-fluid">
             <h2>ரெங்கநாதா விபரம் -  Rs 10002</h2>
-            <table class ="table table-striped" >
+            <table className ="table table-striped" >
               <thead>
                 <tr>
                   <th>தேதி</th>

@@ -11,4 +11,4 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({}, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DayBook);
+export default connect(mapStateToProps, null)(DayBook);
