@@ -21,8 +21,8 @@ export default class IndexPage extends Component {
                       <Link className="btn btn-lg btn-success" to="/wholeregister">மொத்த Register</Link>
                     </div>
                     <div className ="flex-container" >
-                      <Link className="btn btn-lg btn-success balance-sheet" to="/balancesheet">Balance Sheet</Link>
-                      <Link className="btn btn-lg btn-success" to="profitloss">Profit and Loss</Link>
+                      <Link className="btn btn-lg btn-success balance-sheet" to="/depositform">Balance Sheet</Link>
+                      <Link className="btn btn-lg btn-success" to="/daybook">Profit and Loss</Link>
                     </div>
                     <div className ="flex-container" >
                       <Link className="btn btn-lg btn-success depositor" to="/depositordetail">Depositor விபரம்</Link>

@@ -4,7 +4,7 @@ import createLogger from 'redux-logger';
 
 const logger = createLogger();
 export default function configureStore(intitial) {
-  const store = createStore(rootReducer, intitial, applyMiddleware(logger))
+  const store = createStore(rootReducer, intitial)
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers

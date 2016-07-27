@@ -1,8 +1,16 @@
 import React, {Component} from 'react';
 
+import moment from 'moment'
 export default class WholeRegister extends Component {
 
+    componentDidMount() {
+        this.props.getAllDetails()
+
+
+    }
+
     render() {
+        console.log(this.props.daybooks);
         return (
             <div className ="container-fluid" >
                 <table className="table table-striped" >
@@ -16,13 +24,15 @@ export default class WholeRegister extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>18.4.5</td>
-                            <td>Renganatha</td>
-                            <td>89239</td>
-                            <td>10000</td>
-                            <td>0</td>
-                        </tr>
+                        {this.props.daybooks.map((daybook , index) => {
+                                return (<tr key ={index} >
+                                    <td>{moment(new Date(daybook.updatedAt)).format('DD/MM/YYYY')}</td>
+                                    <td>{daybook.type}</td>
+                                    <td>{daybook.name}</td>
+                                    <td>{(daybook.type == "deposit" || daybook.type == "income") ? daybook.amount : "0"}</td>
+                                    <td>{(daybook.type == "pawn" || daybook.type == "expense") ? daybook.amount : "0"}</td>
+                                </tr>)
+                        })}
                     </tbody>
                 </table>
 

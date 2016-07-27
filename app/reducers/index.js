@@ -1,9 +1,13 @@
 import { combineReducers } from 'redux'
-import listOperation from './listOperation'
-import traversal from './traversal'
+import pawn from './pawn'
+import daybook from './daybook'
+
+import {reducer as formReducer} from 'redux-form'
 
 const rootReducer = combineReducers({
-  listOperation,traversal
+  daybook,
+  pawn,
+  form : formReducer
 })
 
 export default rootReducer

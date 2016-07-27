@@ -3,7 +3,7 @@ var webpack = require('webpack')
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
-  entry: [
+  entry: ['babel-polyfill',
     'webpack-hot-middleware/client',
     './index'
   ],
@@ -24,7 +24,7 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          presets: ['react', 'es2015', 'react-hmre']
+          presets: ['react', 'es2015', 'react-hmre', 'stage-0']
         }
       }
     ]

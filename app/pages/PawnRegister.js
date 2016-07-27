@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
 
+import moment from 'moment'
+
 export default class PawnRegister extends Component {
 
+  componentDidMount() {
+    this.props.getPawnDetails();
+  }
   render() {
     var style = { position: 'absolute', bottom: 20, right: 20 }
     return (
@@ -22,54 +27,21 @@ export default class PawnRegister extends Component {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>10001</td>
-              <td>18.4.5</td>
-              <td>Renganatha</td>
-              <td>10000</td>
-              <td>some thing</td>
-              <td>4</td>
-              <td>6.89 g</td>
-              <td>19.7.8</td>
-              <td>34</td>
-              <td>no</td>
-            </tr>
-            <tr>
-              <td>10001</td>
-              <td>18.4.5</td>
-              <td>Renganatha</td>
-              <td>10000</td>
-              <td>some thing</td>
-              <td>4</td>
-              <td>6.89 g</td>
-              <td>19.7.8</td>
-              <td>34</td>
-              <td>no</td>
-            </tr>
-            <tr>
-              <td>10001</td>
-              <td>18.4.5</td>
-              <td>Renganatha</td>
-              <td>10000</td>
-              <td>some thing</td>
-              <td>4</td>
-              <td>6.89 g</td>
-              <td>19.7.8</td>
-              <td>34</td>
-              <td>no</td>
-            </tr>
-            <tr>
-              <td>10001</td>
-              <td>18.4.5</td>
-              <td>Renganatha</td>
-              <td>10000</td>
-              <td>some thing</td>
-              <td>4</td>
-              <td>6.89 g</td>
-              <td>19.7.8</td>
-              <td>34</td>
-              <td>no</td>
-            </tr>
+            {this.props.pawns.map((pawn , index) => {
+              console.log("crash");
+              return (<tr  key = {index} >
+                <td>{pawn.pawnId}</td>
+                <td>{moment(new Date(pawn.updatedAt)).format('DD/MM/YYYY')}</td>
+                <td>{pawn.name}</td>
+                <td>{pawn.amount}</td>
+                <td>{pawn.particulars}</td>
+                <td>{pawn.noOfItems}</td>
+                <td>{`${pawn.totalgrams} g`}</td>
+                <td>{moment(new Date(pawn.returnDate)).format('DD/MM/YYYY')}</td>
+                <td>{pawn.interestPerMonth}</td>
+                <td>{(pawn.done ? "done" : "Pending")}</td>
+              </tr>)
+            })}
           </tbody>
         </table>
         <button type="button" style = {style}  className="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
@@ -116,10 +88,7 @@ export default class PawnRegister extends Component {
                   </div>
                 </form>
               </div>
-              <div className="modal-footer">
-                <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" className="btn btn-primary">Save changes</button>
-              </div>
+              
             </div>
           </div>
         </div>
