@@ -13,7 +13,7 @@ app.use(webpackHotMiddleware(compiler))
 app.use(express.static(path.join(__dirname, './.tmp')))
 app.use(express.static(path.join(__dirname, './app')))
 
-app.get("/", function (req, res) {
+app.get("*", function (req, res) {
   console.log(__dirname);
   res.sendFile(__dirname + '/index.html')
 })

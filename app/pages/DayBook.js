@@ -42,10 +42,10 @@ export default class DayBook extends Component {
                   select
                 </option>
                 <option>
-                  வரவு
+                  Income
                 </option>
                 <option>
-                  பற்று
+                  Expense
                 </option>
               </select>
             </div>

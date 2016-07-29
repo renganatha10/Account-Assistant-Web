@@ -27,7 +27,7 @@ export async function getPawnDetails(){
 }
 
 
-export async function getDepositorById(id){
+export async function getPawnById(id){
    const address = `${config.server}pawn/${id}`
    return await fetch(address).then(checkStatus).catch(err => console.log("Error in Action in we chat login"));
 }

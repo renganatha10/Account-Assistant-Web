@@ -31,7 +31,6 @@ const validate = values => {
 const AddPawnDetailsHelper =  async  (val, dispatch) => {
    try{
       var result =  await addPawnDetails(val);
-      console.log(result);
   }catch(e){
       console.log(e);
   }

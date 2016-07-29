@@ -1,7 +1,9 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
-import {getPawnDetails} from './../async/pawn'
+import {getPawnDetails , searchPawnService} from './../async/pawn'
 import {displayAllPawnDetails} from './../actions/pawn'
+import { reduxForm, change } from 'redux-form'
+
 
 import PawnRegister from './../pages/PawnRegister'
 
@@ -15,18 +17,30 @@ function mapStateToProps(store){
 const GetPawnDetailsHelper = async(dispatch) => {
     try{
         var result = await getPawnDetails();
-        console.log(result);
         dispatch(displayAllPawnDetails(result))
     }catch(e){
        console.log(e);
     }
+}
 
+const SearchPawnDetailsHelper = async(values , dispatch) => {
+    try {
+        var result = await searchPawnService(values)
+        dispatch(displayAllPawnDetails(result))
+    } catch (e) {
+        console.log(e);
+    }
 }
 
 function mapDispatchToProps(dispatch){
     return{
-        getPawnDetails : () => GetPawnDetailsHelper(dispatch)
+        getPawnDetails : () => GetPawnDetailsHelper(dispatch),
+        searchPawnDetails :(values) => SearchPawnDetailsHelper(values , dispatch)
     }
 }
 
-export default connect (mapStateToProps,mapDispatchToProps)(PawnRegister);
+
+export default reduxForm({
+    form: 'PawnSearchForm',
+    fields: ['name', 'amount', 'returnDate' ,'updatedAt']
+}, mapStateToProps, mapDispatchToProps)(PawnRegister)

@@ -3,8 +3,8 @@ import rootReducer from '../reducers'
 import createLogger from 'redux-logger';
 
 const logger = createLogger();
-export default function configureStore(intitial) {
-  const store = createStore(rootReducer, intitial)
+export default function configureStore() {
+  const store = createStore(rootReducer)
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers

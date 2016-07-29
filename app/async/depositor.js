@@ -13,8 +13,8 @@ export async function addDepositorDetails(fieldValues){
 
 export async function getDepositorById(id){
    const address = `${config.server}depositor/${id}`
-   return await fetch(address),then(checkStatus).catch(err => console.log("Error in Action in we chat login"));
-   
+   return await fetch(address).then(checkStatus).catch(err => console.log("Error in Action in we chat login"));
+
 }
 
 function checkStatus(response) {

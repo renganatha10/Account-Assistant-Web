@@ -19,7 +19,6 @@ const GetAllDetailsHelper = async (dispatch) => {
     try {
         var result = await getAllDetails();
         dispatch(displayAllDetails(result))
-        console.log(result);
     } catch (e) {
         console.log(e);
     }
