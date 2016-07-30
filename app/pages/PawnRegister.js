@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import Navbar from './../components/Navbar'
+
 import moment from 'moment'
 
 export default class PawnRegister extends Component {
@@ -20,6 +22,7 @@ export default class PawnRegister extends Component {
 
     return (
       <div className="container-fluid">
+        <Navbar />
         <table className="table table-striped">
           <thead>
             <tr>

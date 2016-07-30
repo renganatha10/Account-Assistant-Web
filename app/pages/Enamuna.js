@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+
+import Navbar from './../components/Navbar'
+
 export default class Enamuna extends Component {
 
   handleSubmit(data){
@@ -15,6 +18,7 @@ export default class Enamuna extends Component {
 
     return (
       <div className="container-fluid">
+        <Navbar />
         <h2>E Namuna</h2>
         <form className = "form-horizontal" onSubmit={handleSubmit(this.handleSubmit.bind(this))} >
           <div className="form-group">

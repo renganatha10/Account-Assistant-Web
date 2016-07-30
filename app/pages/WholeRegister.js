@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 
+import Navbar from './../components/Navbar'
+
+
 import moment from 'moment'
 export default class WholeRegister extends Component {
 
@@ -10,9 +13,10 @@ export default class WholeRegister extends Component {
     }
 
     render() {
-        console.log(this.props.daybooks);
+
         return (
             <div className ="container-fluid" >
+                <Navbar />
                 <table className="table table-striped" >
                     <thead>
                         <tr>

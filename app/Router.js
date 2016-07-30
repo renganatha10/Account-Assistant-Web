@@ -12,6 +12,7 @@ import Fnauma from './containers/FnamunaCOntainer'
 import PawnRegister from './containers/PawnRegisterContainer'
 import PawnDetail from './containers/PawnDetailContainer'
 import WholeRegister from './containers/WholeRegisterContainer'
+import IntrestReceipt from './containers/InterestReceiptContainer'
 
 export default class MainRouter extends Component {
     render() {
@@ -26,6 +27,7 @@ export default class MainRouter extends Component {
                <Route path="/pawnregister" component={PawnRegister}/>
                <Route path="/pawndetail" component={PawnDetail}/>
                <Route path="/wholeregister" component={WholeRegister}/>
+               <Route path="/interestreceipt" component={IntrestReceipt}/>
              </Router>
         );
     }

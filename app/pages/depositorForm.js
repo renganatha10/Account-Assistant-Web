@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
 
+import Navbar from './../components/Navbar'
+
 export default class DepositorForm extends Component {
 
     handleSubmit(data){
@@ -17,6 +19,7 @@ export default class DepositorForm extends Component {
     var style = {marginLeft : 10}
         return (
             <div className="container-fluid">
+                <Navbar />
               <h2>Depositor விபரம்</h2>
               <form className = "form-horizontal" onSubmit = {handleSubmit(this.handleSubmit.bind(this))} >
                 <div className="form-group">

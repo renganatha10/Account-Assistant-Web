@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import Navbar from './../components/Navbar'
+
 export default class DayBook extends Component {
 
 
@@ -20,6 +22,7 @@ export default class DayBook extends Component {
 
     return (
       <div className="container-fluid">
+        <Navbar />
         <h2>தினசரி கணக்கு விபரம்</h2>
         <form className="form-horizontal" onSubmit = { handleSubmit(this.handleSubmit.bind(this)) } >
           <div className="form-group">

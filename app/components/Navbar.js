@@ -1,29 +1,31 @@
 import React, {Component} from 'react';
-
+import { Link } from 'react-router'
 export default class Navbar extends Component {
 
   render() {
+    console.log(this.props);
     return (
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
+      <nav className="navbar navbar-default">
+        <div className="container-fluid">
 
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
+          <div className="navbar-header">
+            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span className="sr-only">Toggle navigation</span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">AVL அடகு கடை</a>
+            <Link to="/" className = "navbar-brand" >AVL அடகு கடை</Link>
+
           </div>
 
 
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Whole Register <span class="sr-only">(current) </span></a></li>
-              <li><a href="#">அடகு Register</a></li>
-              <li><a href="#">Balance Sheet</a></li>
-              <li><a href="#">Profit and Loss</a></li>
+          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul className="nav navbar-nav">
+              <li><Link activeClassName = "activeLink" to="/wholeregister">Whole Register <span className="sr-only">(current) </span></Link></li>
+              <li><Link activeClassName = "activeLink" to="/pawnregister">அடகு Register</Link></li>
+              <li><Link activeClassName = "activeLink" to="/depositordetail">Depositor விபரம்</Link></li>
+              <li><Link activeClassName = "activeLink" to="/pawndetail">அடகு விபரம்</Link></li>
             </ul>
           </div>
         </div>

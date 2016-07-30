@@ -12,23 +12,11 @@ function mapStateToProps(store) {
     };
 }
 
-const GetDepositorDetailByIdHelper = async(val , dispatch) => {
-    try {
-        var result = await(getDepositorById(val));
-        console.log(result);
-        dispatch(displayDepositorDetails(result))
-    } catch (e) {
-        console.log(e);
-    }
-}
 
 function mapDispatchToProps(dispatch) {
     return {
-        getDepositorDetailById : (val) => GetDepositorDetailByIdHelper(val,dispatch)
+
     }
 }
 
-export default reduxForm({
-    form: 'DepositorDetailForm',
-    fields: ['no']
-}, mapStateToProps, mapDispatchToProps)(DepositorDetail)
+export default connect(mapStateToProps, mapDispatchToProps)(DepositorDetail)

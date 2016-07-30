@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+
 import { reduxForm, change } from 'redux-form'
 import Enamuna from './../pages/Enamuna';
 import {addPawnDetails} from './../async/pawn'
