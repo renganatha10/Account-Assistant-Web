@@ -3,10 +3,10 @@ import React, {Component} from 'react';
 import Navbar from './../components/Navbar'
 
 import GetDetailsById from './../containers/GetDetailsByIDContainer'
+import moment from 'moment'
 
 export default class PawnDetail extends Component {
   render() {
-
     return (
       <div className="container-fluid">
        <Navbar />
@@ -25,11 +25,11 @@ export default class PawnDetail extends Component {
               </tr>
             </thead>
             <tbody>
-            {this.props.pawn.daybook.map((daybook , index) => {
+            {this.props.daybook.map((daybook , index) => {
                         return (
-                            <tr>
-                              <th>{daybook.updatedAt}</th>
-                              <th>{daybook.particulars}</th>
+                            <tr key={index} >
+                              <th>{ moment(new Date(daybook.updatedAt)).format('DD/MM/YYYY') }</th>
+                              <th>வட்டி பற்று</th>
                               <th>{daybook.amount}</th>
                               <th>0</th>
                             </tr>

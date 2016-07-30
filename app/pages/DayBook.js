@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-
 import Navbar from './../components/Navbar'
-
 export default class DayBook extends Component {
 
 
@@ -58,6 +56,7 @@ export default class DayBook extends Component {
             <button style={style}  disabled =  {submitting}  onClick = { resetForm }  className="btn btn-default btn-lg">Reset</button>
           </div>
         </form>
+
       </div>
     );
   }

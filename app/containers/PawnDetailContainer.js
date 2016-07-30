@@ -9,7 +9,8 @@ import PawnDetail from './../pages/PawnDetail'
 
 function mapStateToProps(store){
     return {
-        pawn : store.pawn.individualPawn
+        pawn : store.pawn.individualPawn.pawn,
+        daybook : store.pawn.individualPawn.daybook
     }
 }
 

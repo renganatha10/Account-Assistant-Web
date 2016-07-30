@@ -30,7 +30,7 @@ export async function editPawnDetails(fieldValues){
      headers : {
        'Accept': 'application/json',
        'Content-Type': 'application/json'  },
-   body : JSON.stringify({fieldValues}) }).then(checkStatus).catch(err => console.log("Error in Action in we chat login"));
+   body : JSON.stringify(fieldValues) }).then(checkStatus).catch(err => console.log("Error in Action in we chat login"));
 
 }
 
