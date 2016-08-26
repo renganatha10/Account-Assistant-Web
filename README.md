@@ -1,12 +1,16 @@
-# Folder Structure Using React And Redux
+# Account Assistant Client Using React And Redux
 
-    Sample Folder Structure Using React And State Management Using Redux
+### Framework Used
+ - BootStarp
+ - React
+ - Redux
+ - React Router
 
 ### Installation
 
 ```sh
-$ git clone https://github.com/renganatha10/FolderStucture.git 
-$ cd FolderStucture
-$ npm install
-$ npm start
+ git clone https://github.com/rengasahusoft/Account-Assistant-Web.git 
+ cd Account-Assistant-Web
+ npm install
+ npm start
 ```
